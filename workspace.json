@@ -175,6 +175,90 @@
           }
         }
       }
+    },
+    "hero-api": {
+      "root": "apps/hero-api",
+      "sourceRoot": "apps/hero-api/src",
+      "projectType": "application",
+      "prefix": "hero-api",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/hero-api",
+            "main": "apps/hero-api/src/main.ts",
+            "tsConfig": "apps/hero-api/tsconfig.app.json",
+            "assets": [
+              "apps/hero-api/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/hero-api/src/environments/environment.ts",
+                  "with": "apps/hero-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "hero-api:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/hero-api/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/hero-api"
+          ],
+          "options": {
+            "jestConfig": "apps/hero-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "hero-controllers": {
+      "root": "libs/hero/controllers",
+      "sourceRoot": "libs/hero/controllers/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/hero/controllers/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/hero/controllers"
+          ],
+          "options": {
+            "jestConfig": "libs/hero/controllers/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

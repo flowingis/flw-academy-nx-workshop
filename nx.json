@@ -19,6 +19,8 @@
     "hero-app": { "tags": [] },
     "hero-app-e2e": { "tags": [], "implicitDependencies": ["hero-app"] },
     "hero-data-access": { "tags": [] },
-    "hero-ui": { "tags": [] }
+    "hero-ui": { "tags": [] },
+    "hero-api": { "tags": [] },
+    "hero-controllers": { "tags": [] }
   }
 }
