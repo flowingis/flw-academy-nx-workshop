@@ -8,9 +8,8 @@ describe('HeroViewerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeroViewerComponent ]
-    })
-    .compileComponents();
+      declarations: [HeroViewerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
