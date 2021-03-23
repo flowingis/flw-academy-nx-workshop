@@ -33,6 +33,7 @@
     },
     "hero-hero-list": {
       "tags": ["type:feature", "scope:hero", "platform:web"]
-    }
+    },
+    "common-tokens": { "tags": ["type:util", "scope:shared", "platform:web"] }
   }
 }
