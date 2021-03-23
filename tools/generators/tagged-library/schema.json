@@ -75,6 +75,16 @@
           }
         ]
       }
+    },
+    "directory": {
+      "type": "string",
+      "default": "",
+      "x-prompt": "What is the directory?"
+    },
+    "prefix": {
+      "type": "string",
+      "default": "flw",
+      "x-prompt": "What is the Prefix?"
     }
   },
   "required": [
