@@ -4,6 +4,14 @@ on:
     branches: [main]
 env:
   BEFORE_SHA: ${{ github.event.before }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+  AWS_DEFAULT_REGION: 'eu-central-1'
+  NG_DEPLOY_AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+  NG_DEPLOY_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+  NG_DEPLOY_AWS_BUCKET: 'nx-hero-app'
+  NG_DEPLOY_AWS_REGION: 'eu-central-1'
+
 jobs:
   build:
     runs-on: ubuntu-latest
